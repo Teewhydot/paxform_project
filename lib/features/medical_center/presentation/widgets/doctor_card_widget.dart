@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -66,14 +68,7 @@ class DoctorCardWidget extends StatelessWidget {
                   backgroundColor: AppColors.backgroundGray,
                   backgroundImage: profileImageUrl != null
                       ? NetworkImage(profileImageUrl!)
-                      : null,
-                  child: profileImageUrl == null
-                      ? Icon(
-                          Icons.person,
-                          size: 28,
-                          color: AppColors.textSecondary,
-                        )
-                      : null,
+                      : AssetImage(AppAssets.person1Png) as ImageProvider,
                 ),
                 const SizedBox(width: AppSpacing.md), // Figma: 12px gap
 
@@ -120,10 +115,11 @@ class DoctorCardWidget extends StatelessWidget {
             // Rating
             Row(
               children: [
-                Icon(
-                  Icons.star,
-                  size: 18,
-                  color: AppColors.ratingYellow, // Figma: Yellow star
+                Image.asset(
+                  AppAssets.starPng,
+                  width: 18,
+                  height: 18,
+                  fit: BoxFit.contain,
                 ),
                 const SizedBox(width: 4),
                 Text(
@@ -153,7 +149,7 @@ class DoctorCardWidget extends StatelessWidget {
               children: [
                 // Availability badge
                 _buildBadge(
-                  icon: Icons.calendar_today,
+                  svgPath: AppAssets.calendarSvg,
                   text: availability,
                   color: AppColors.primaryBlue,
                 ),
@@ -161,7 +157,7 @@ class DoctorCardWidget extends StatelessWidget {
 
                 // Time slot badge
                 _buildBadge(
-                  icon: Icons.access_time,
+                  svgPath: AppAssets.timeSvg,
                   text: timeSlot,
                   color: AppColors.primaryBlue,
                 ),
@@ -173,10 +169,14 @@ class DoctorCardWidget extends StatelessWidget {
             // Location and distance
             Row(
               children: [
-                Icon(
-                  Icons.location_on,
-                  size: 18,
-                  color: AppColors.accentGreen, // Figma: Green location icon
+                SvgPicture.asset(
+                  AppAssets.locationSvg,
+                  width: 18,
+                  height: 18,
+                  colorFilter: const ColorFilter.mode(
+                    AppColors.accentGreen,
+                    BlendMode.srcIn,
+                  ),
                 ),
                 const SizedBox(width: 4),
                 Expanded(
@@ -205,7 +205,7 @@ class DoctorCardWidget extends StatelessWidget {
   }
 
   Widget _buildBadge({
-    required IconData icon,
+    required String svgPath,
     required String text,
     required Color color,
   }) {
@@ -221,10 +221,14 @@ class DoctorCardWidget extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            icon,
-            size: 14,
-            color: color, // Figma: Blue icon
+          SvgPicture.asset(
+            svgPath,
+            width: 14,
+            height: 14,
+            colorFilter: ColorFilter.mode(
+              color,
+              BlendMode.srcIn,
+            ),
           ),
           const SizedBox(width: 4),
           Text(

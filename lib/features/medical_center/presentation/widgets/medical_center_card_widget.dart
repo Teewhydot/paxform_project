@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -64,20 +65,13 @@ class MedicalCenterCardWidget extends StatelessWidget {
                       topLeft: Radius.circular(AppSpacing.radiusMedium),
                       topRight: Radius.circular(AppSpacing.radiusMedium),
                     ),
-                    image: imageUrl != null
-                        ? DecorationImage(
-                            image: NetworkImage(imageUrl!),
-                            fit: BoxFit.cover,
-                          )
-                        : null,
+                    image: DecorationImage(
+                      image: imageUrl != null
+                          ? NetworkImage(imageUrl!) as ImageProvider
+                          : AssetImage(AppAssets.nearestMedicalCenterPng),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  child: imageUrl == null
-                      ? Icon(
-                          Icons.local_hospital,
-                          size: 48,
-                          color: AppColors.textTertiary,
-                        )
-                      : null,
                 ),
 
                 // Favorite button
@@ -184,10 +178,11 @@ class MedicalCenterCardWidget extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(width: 2),
-                            Icon(
-                              Icons.star,
-                              size: 12,
-                              color: AppColors.ratingYellow,
+                            Image.asset(
+                              AppAssets.starPng,
+                              width: 12,
+                              height: 12,
+                              fit: BoxFit.contain,
                             ),
                           ],
                         ),

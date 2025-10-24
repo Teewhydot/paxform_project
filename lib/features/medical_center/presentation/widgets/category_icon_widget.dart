@@ -6,13 +6,13 @@ import '../../../../core/theme/app_typography.dart';
 /// Category icon widget with circular design and label
 /// Figma: Circular icon button with text label below
 class CategoryIconWidget extends StatelessWidget {
-  final IconData icon;
+  final String imagePath;
   final String label;
   final VoidCallback? onTap;
 
   const CategoryIconWidget({
     super.key,
-    required this.icon,
+    required this.imagePath,
     required this.label,
     this.onTap,
   });
@@ -37,9 +37,12 @@ class CategoryIconWidget extends StatelessWidget {
                 color: AppColors.categoryColor, // Figma: Colored background
                 shape: BoxShape.circle,
               ),
-              child: Icon(
-                icon,
-                size: 28, // Figma: ~28px icon
+              child: Padding(
+                padding: const EdgeInsets.all(14.0), // Figma: Padding for image
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
 

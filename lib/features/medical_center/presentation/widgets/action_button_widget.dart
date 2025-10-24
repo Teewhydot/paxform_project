@@ -6,8 +6,7 @@ import '../../../../core/theme/app_typography.dart';
 /// Action button widget for booking appointments
 /// Figma: Icon + Title + Subtitle cards with colored backgrounds
 class ActionButtonWidget extends StatelessWidget {
-  final IconData icon;
-  final Color iconColor;
+  final String imagePath;
   final Color backgroundColor;
   final String title;
   final String subtitle;
@@ -15,8 +14,7 @@ class ActionButtonWidget extends StatelessWidget {
 
   const ActionButtonWidget({
     super.key,
-    required this.icon,
-    required this.iconColor,
+    required this.imagePath,
     required this.backgroundColor,
     required this.title,
     required this.subtitle,
@@ -56,10 +54,12 @@ class ActionButtonWidget extends StatelessWidget {
                   AppSpacing.radiusSmall, // Figma: 8px radius
                 ),
               ),
-              child: Icon(
-                icon,
-                size: AppSpacing.iconLarge, // Figma: 32px icon
-                color: iconColor, // Figma: Colored icon
+              child: Padding(
+                padding: const EdgeInsets.all(10.0), // Figma: Padding for image
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
 

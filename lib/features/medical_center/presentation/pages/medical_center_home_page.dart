@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -18,10 +20,13 @@ class MedicalCenterHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryBlue,
+      backgroundColor: AppColors.backgroundGray,
       body: SafeArea(
         child: Column(
           children: [
+            // Header with title
+            _buildHeader(),
+
             // Scrollable content
             Expanded(
               child: SingleChildScrollView(
@@ -81,8 +86,7 @@ class MedicalCenterHomePage extends StatelessWidget {
                         children: [
                           Expanded(
                             child: ActionButtonWidget(
-                              icon: Icons.medical_services_outlined,
-                              iconColor: AppColors.accentPurple,
+                              imagePath: AppAssets.doctorAppointmentPng,
                               backgroundColor: AppColors.accentPurpleLight,
                               title: 'Book Doctor Appointment',
                               subtitle: 'Find a Doctor or Specialist',
@@ -94,8 +98,7 @@ class MedicalCenterHomePage extends StatelessWidget {
                           const SizedBox(width: AppSpacing.lg),
                           Expanded(
                             child: ActionButtonWidget(
-                              icon: Icons.local_hospital_outlined,
-                              iconColor: AppColors.accentGreen,
+                              imagePath: AppAssets.hospitalAppointmentPng,
                               backgroundColor: AppColors.accentGreenLight,
                               title: 'Book Hospital Appointment',
                               subtitle: 'Locate nearby hospital to visit',
@@ -138,43 +141,35 @@ class MedicalCenterHomePage extends StatelessWidget {
                         crossAxisSpacing: AppSpacing.sm,
                         children: [
                           CategoryIconWidget(
-                            icon: Icons.medication_outlined,
+                            imagePath: AppAssets.generalPng,
                             label: 'General',
-                          ) ,
+                          ),
                           CategoryIconWidget(
-                            icon: Icons.favorite_outline,
+                            imagePath: AppAssets.heartPng,
                             label: 'Heart',
                           ),
                           CategoryIconWidget(
-                            icon: Icons.medication_liquid_outlined,
+                            imagePath: AppAssets.dentistPng,
                             label: 'Dentist',
                           ),
                           CategoryIconWidget(
-                            icon: Icons.face_outlined,
+                            imagePath: AppAssets.skinPng,
                             label: 'Skin',
                           ),
                           CategoryIconWidget(
-                            icon: Icons.monitor_heart_outlined,
+                            imagePath: AppAssets.stomachPng,
                             label: 'Stomach',
                           ),
                           CategoryIconWidget(
-                            icon: Icons.monitor_heart_outlined,
-                            label: 'Stomach',
-                          ),
-                          CategoryIconWidget(
-                            icon: Icons.air_outlined,
+                            imagePath: AppAssets.lungPng,
                             label: 'Lung',
                           ),
                           CategoryIconWidget(
-                            icon: Icons.accessibility_new_outlined,
+                            imagePath: AppAssets.bonePng,
                             label: 'Bone',
                           ),
                           CategoryIconWidget(
-                            icon: Icons.psychology_outlined,
-                            label: 'CTN',
-                          ),
-                          CategoryIconWidget(
-                            icon: Icons.psychology_outlined,
+                            imagePath: AppAssets.etnPng,
                             label: 'CTN',
                           ),
                         ],
@@ -363,10 +358,17 @@ class MedicalCenterHomePage extends StatelessWidget {
               color: AppColors.textWhite.withValues(alpha: 0.2),
               shape: BoxShape.circle,
             ),
-            child: Icon(
-              Icons.shield_outlined,
-              size: 28,
-              color: AppColors.textWhite,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: SvgPicture.asset(
+                AppAssets.shieldSvg,
+                width: 28,
+                height: 28,
+                colorFilter: const ColorFilter.mode(
+                  AppColors.textWhite,
+                  BlendMode.srcIn,
+                ),
+              ),
             ),
           ),
           const SizedBox(height: AppSpacing.md),
