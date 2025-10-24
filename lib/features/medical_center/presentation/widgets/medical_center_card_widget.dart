@@ -41,7 +41,7 @@ class MedicalCenterCardWidget extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.shadow.withOpacity(0.08),
+              color: AppColors.shadow.withValues(alpha:0.08),
               offset: const Offset(0, 2),
               blurRadius: 8,
               spreadRadius: 0,
@@ -95,7 +95,7 @@ class MedicalCenterCardWidget extends StatelessWidget {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.shadow.withOpacity(0.1),
+                            color: AppColors.shadow.withValues(alpha:0.1),
                             offset: const Offset(0, 2),
                             blurRadius: 4,
                           ),
@@ -169,7 +169,7 @@ class MedicalCenterCardWidget extends StatelessWidget {
                           vertical: 3,
                         ),
                         decoration: BoxDecoration(
-                          color: AppColors.ratingYellow.withOpacity(0.15),
+                          color: AppColors.ratingYellow.withValues(alpha:0.15),
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Row(

@@ -145,56 +145,56 @@ class MedicalCenterHomePage extends StatelessWidget {
                             label: 'General',
                             iconColor: AppColors.categoryGeneral,
                             backgroundColor:
-                                AppColors.categoryGeneral.withOpacity(0.15),
+                                AppColors.categoryGeneral.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.favorite_outline,
                             label: 'Heart',
                             iconColor: AppColors.categoryHeart,
                             backgroundColor:
-                                AppColors.categoryHeart.withOpacity(0.15),
+                                AppColors.categoryHeart.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.medication_liquid_outlined,
                             label: 'Dentist',
                             iconColor: AppColors.categoryDentist,
                             backgroundColor:
-                                AppColors.categoryDentist.withOpacity(0.15),
+                                AppColors.categoryDentist.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.face_outlined,
                             label: 'Skin',
                             iconColor: AppColors.categorySkin,
                             backgroundColor:
-                                AppColors.categorySkin.withOpacity(0.15),
+                                AppColors.categorySkin.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.monitor_heart_outlined,
                             label: 'Stomach',
                             iconColor: AppColors.categoryStomach,
                             backgroundColor:
-                                AppColors.categoryStomach.withOpacity(0.15),
+                                AppColors.categoryStomach.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.air_outlined,
                             label: 'Lung',
                             iconColor: AppColors.categoryLung,
                             backgroundColor:
-                                AppColors.categoryLung.withOpacity(0.15),
+                                AppColors.categoryLung.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.accessibility_new_outlined,
                             label: 'Bone',
                             iconColor: AppColors.categoryBone,
                             backgroundColor:
-                                AppColors.categoryBone.withOpacity(0.15),
+                                AppColors.categoryBone.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.psychology_outlined,
                             label: 'CTN',
                             iconColor: AppColors.categoryCTN,
                             backgroundColor:
-                                AppColors.categoryCTN.withOpacity(0.15),
+                                AppColors.categoryCTN.withValues(alpha: 0.15),
                           ),
                         ],
                       ),
@@ -379,7 +379,7 @@ class MedicalCenterHomePage extends StatelessWidget {
             width: 48,
             height: 48,
             decoration: BoxDecoration(
-              color: AppColors.textWhite.withOpacity(0.2),
+              color: AppColors.textWhite.withValues(alpha: 0.2),
               shape: BoxShape.circle,
             ),
             child: Icon(

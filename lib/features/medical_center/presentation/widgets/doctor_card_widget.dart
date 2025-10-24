@@ -215,7 +215,7 @@ class DoctorCardWidget extends StatelessWidget {
         vertical: 6, // Figma: 6px vertical
       ),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1), // Figma: Light blue background
+        color: color.withValues(alpha:0.1), // Figma: Light blue background
         borderRadius: BorderRadius.circular(6), // Figma: 6px radius
       ),
       child: Row(

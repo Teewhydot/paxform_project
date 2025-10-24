@@ -39,7 +39,7 @@ class AppointmentCardWidget extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primaryBlue.withOpacity(0.3),
+            color: AppColors.primaryBlue.withValues(alpha:0.3),
             offset: const Offset(0, 4),
             blurRadius: 12,
             spreadRadius: 0,
@@ -111,7 +111,7 @@ class AppointmentCardWidget extends StatelessWidget {
                     Icon(
                       Icons.calendar_today,
                       size: 18,
-                      color: AppColors.textWhite.withOpacity(0.9),
+                      color: AppColors.textWhite.withValues(alpha:0.9),
                     ),
                     const SizedBox(width: AppSpacing.sm), // 8px gap
                     Text(
@@ -153,7 +153,7 @@ class AppointmentCardWidget extends StatelessWidget {
               Icon(
                 Icons.access_time,
                 size: 18,
-                color: AppColors.textWhite.withOpacity(0.9),
+                color: AppColors.textWhite.withValues(alpha:0.9),
               ),
               const SizedBox(width: AppSpacing.sm), // 8px gap
               Text(
@@ -190,7 +190,7 @@ class AppointmentCardWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: isActive
             ? AppColors.textWhite // Figma: White for active
-            : AppColors.textWhite.withOpacity(0.4), // Figma: Transparent for inactive
+            : AppColors.textWhite.withValues(alpha:0.4), // Figma: Transparent for inactive
         borderRadius: BorderRadius.circular(3),
       ),
     );

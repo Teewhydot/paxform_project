@@ -42,7 +42,7 @@ class SearchBarWidget extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.shadow.withOpacity(0.08), // Subtle shadow
+            color: AppColors.shadow.withValues(alpha:0.08), // Subtle shadow
             offset: const Offset(0, 2), // Figma: Y offset 2px
             blurRadius: 8, // Figma: 8px blur
             spreadRadius: 0,
