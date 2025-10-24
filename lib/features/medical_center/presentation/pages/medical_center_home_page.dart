@@ -22,9 +22,6 @@ class MedicalCenterHomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // Header with title
-            _buildHeader(),
-
             // Scrollable content
             Expanded(
               child: SingleChildScrollView(
