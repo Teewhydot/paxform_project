@@ -8,16 +8,12 @@ import '../../../../core/theme/app_typography.dart';
 class CategoryIconWidget extends StatelessWidget {
   final IconData icon;
   final String label;
-  final Color iconColor;
-  final Color backgroundColor;
   final VoidCallback? onTap;
 
   const CategoryIconWidget({
     super.key,
     required this.icon,
     required this.label,
-    required this.iconColor,
-    required this.backgroundColor,
     this.onTap,
   });
 
@@ -38,13 +34,12 @@ class CategoryIconWidget extends StatelessWidget {
               width: 56, // Figma: ~56px diameter
               height: 56, // Figma: ~56px diameter
               decoration: BoxDecoration(
-                color: backgroundColor, // Figma: Colored background
+                color: AppColors.categoryColor, // Figma: Colored background
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 icon,
                 size: 28, // Figma: ~28px icon
-                color: iconColor, // Figma: Colored icon
               ),
             ),
 

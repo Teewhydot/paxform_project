@@ -18,7 +18,7 @@ class MedicalCenterHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundLight,
+      backgroundColor: AppColors.primaryBlue,
       body: SafeArea(
         child: Column(
           children: [
@@ -143,58 +143,42 @@ class MedicalCenterHomePage extends StatelessWidget {
                           CategoryIconWidget(
                             icon: Icons.medication_outlined,
                             label: 'General',
-                            iconColor: AppColors.categoryGeneral,
-                            backgroundColor:
-                                AppColors.categoryGeneral.withValues(alpha: 0.15),
-                          ),
+                          ) ,
                           CategoryIconWidget(
                             icon: Icons.favorite_outline,
                             label: 'Heart',
-                            iconColor: AppColors.categoryHeart,
-                            backgroundColor:
-                                AppColors.categoryHeart.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.medication_liquid_outlined,
                             label: 'Dentist',
-                            iconColor: AppColors.categoryDentist,
-                            backgroundColor:
-                                AppColors.categoryDentist.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.face_outlined,
                             label: 'Skin',
-                            iconColor: AppColors.categorySkin,
-                            backgroundColor:
-                                AppColors.categorySkin.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.monitor_heart_outlined,
                             label: 'Stomach',
-                            iconColor: AppColors.categoryStomach,
-                            backgroundColor:
-                                AppColors.categoryStomach.withValues(alpha: 0.15),
+                          ),
+                          CategoryIconWidget(
+                            icon: Icons.monitor_heart_outlined,
+                            label: 'Stomach',
                           ),
                           CategoryIconWidget(
                             icon: Icons.air_outlined,
                             label: 'Lung',
-                            iconColor: AppColors.categoryLung,
-                            backgroundColor:
-                                AppColors.categoryLung.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.accessibility_new_outlined,
                             label: 'Bone',
-                            iconColor: AppColors.categoryBone,
-                            backgroundColor:
-                                AppColors.categoryBone.withValues(alpha: 0.15),
                           ),
                           CategoryIconWidget(
                             icon: Icons.psychology_outlined,
                             label: 'CTN',
-                            iconColor: AppColors.categoryCTN,
-                            backgroundColor:
-                                AppColors.categoryCTN.withValues(alpha: 0.15),
+                          ),
+                          CategoryIconWidget(
+                            icon: Icons.psychology_outlined,
+                            label: 'CTN',
                           ),
                         ],
                       ),
