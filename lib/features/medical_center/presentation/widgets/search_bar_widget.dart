@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -86,10 +87,11 @@ class SearchBarWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             child: Padding(
               padding: const EdgeInsets.all(AppSpacing.sm), // 8px padding for touch target
-              child: Icon(
-                Icons.tune, // Filter/tune icon
-                size: AppSpacing.iconMedium, // Figma: 24px icon
-                color: AppColors.textPrimary, // Figma: Dark icon
+              child: Image.asset(
+                AppAssets.filterPng,
+                width: AppSpacing.iconMedium, // Figma: 24px icon
+                height: AppSpacing.iconMedium,
+                fit: BoxFit.contain,
               ),
             ),
           ),
@@ -114,10 +116,11 @@ class SearchBarWidget extends StatelessWidget {
                   AppSpacing.radiusSmall, // Figma: 8px radius
                 ),
               ),
-              child: const Icon(
-                Icons.image_search, // Scan/image search icon
-                size: 20, // Figma: ~20px icon
-                color: AppColors.textWhite, // Figma: White icon
+              child: Image.asset(
+                AppAssets.searchLocationPng,
+                width: 20, // Figma: ~20px icon
+                height: 20,
+                fit: BoxFit.contain,
               ),
             ),
           ),

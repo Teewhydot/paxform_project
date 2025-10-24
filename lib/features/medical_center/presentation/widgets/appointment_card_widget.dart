@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -65,14 +67,7 @@ class AppointmentCardWidget extends StatelessWidget {
                   backgroundColor: AppColors.backgroundGray,
                   backgroundImage: profileImageUrl != null
                       ? NetworkImage(profileImageUrl!)
-                      : null,
-                  child: profileImageUrl == null
-                      ? Icon(
-                          Icons.person,
-                          size: 24,
-                          color: AppColors.textSecondary,
-                        )
-                      : null,
+                      : AssetImage(AppAssets.person1Png) as ImageProvider,
                 ),
                 const SizedBox(width: AppSpacing.md), // Figma: 12px gap
 
@@ -108,10 +103,14 @@ class AppointmentCardWidget extends StatelessWidget {
               Expanded(
                 child: Row(
                   children: [
-                    Icon(
-                      Icons.calendar_today,
-                      size: 18,
-                      color: AppColors.textWhite.withValues(alpha:0.9),
+                    SvgPicture.asset(
+                      AppAssets.calendarSvg,
+                      width: 18,
+                      height: 18,
+                      colorFilter: ColorFilter.mode(
+                        AppColors.textWhite.withValues(alpha: 0.9),
+                        BlendMode.srcIn,
+                      ),
                     ),
                     const SizedBox(width: AppSpacing.sm), // 8px gap
                     Text(
@@ -135,10 +134,17 @@ class AppointmentCardWidget extends StatelessWidget {
                     color: AppColors.backgroundWhite, // Figma: White background
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
-                    Icons.navigation,
-                    size: 18,
-                    color: AppColors.primaryBlue, // Figma: Blue icon
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset(
+                      AppAssets.sendSvg,
+                      width: 18,
+                      height: 18,
+                      colorFilter: const ColorFilter.mode(
+                        AppColors.primaryBlue,
+                        BlendMode.srcIn,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -150,10 +156,14 @@ class AppointmentCardWidget extends StatelessWidget {
           // Time
           Row(
             children: [
-              Icon(
-                Icons.access_time,
-                size: 18,
-                color: AppColors.textWhite.withValues(alpha:0.9),
+              SvgPicture.asset(
+                AppAssets.timeSvg,
+                width: 18,
+                height: 18,
+                colorFilter: ColorFilter.mode(
+                  AppColors.textWhite.withValues(alpha: 0.9),
+                  BlendMode.srcIn,
+                ),
               ),
               const SizedBox(width: AppSpacing.sm), // 8px gap
               Text(
