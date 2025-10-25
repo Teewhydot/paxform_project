@@ -51,10 +51,14 @@ class DoctorCardWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             AppSpacing.radiusMedium, // Figma: 12px radius
           ),
-          border: Border.all(
-            color: AppColors.border, // Figma: Light gray border
-            width: 1,
-          ),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.shadow.withValues(alpha: 0.08),
+              offset: const Offset(0, 2), // X=0, Y=2
+              blurRadius: 8, // Blur=8
+              spreadRadius: 0, // Spread=0
+            ),
+          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +75,6 @@ class DoctorCardWidget extends StatelessWidget {
                       : AssetImage(AppAssets.person1Png) as ImageProvider,
                 ),
                 const SizedBox(width: AppSpacing.md), // Figma: 12px gap
-
                 // Name and specialty
                 Expanded(
                   child: Column(
@@ -79,14 +82,16 @@ class DoctorCardWidget extends StatelessWidget {
                     children: [
                       Text(
                         name,
-                        style: AppTypography.bodyLarge, // Figma: Semi-bold, 16px
+                        style:
+                            AppTypography.bodyLarge, // Figma: Semi-bold, 16px
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: 2),
                       Text(
                         '$specialty | $yearsOfExperience Years',
-                        style: AppTypography.caption, // Figma: Regular, 13px, gray
+                        style:
+                            AppTypography.caption, // Figma: Regular, 13px, gray
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -111,10 +116,13 @@ class DoctorCardWidget extends StatelessWidget {
             ),
 
             const SizedBox(height: AppSpacing.md), // Figma: 12px gap
-
             // Rating
             Row(
               children: [
+                  Text(
+                  rating.toStringAsFixed(1),
+                  style: AppTypography.rating, // Figma: Semi-bold, 14px
+                ),
                 Image.asset(
                   AppAssets.starPng,
                   width: 18,
@@ -122,16 +130,9 @@ class DoctorCardWidget extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(width: 4),
-                Text(
-                  rating.toStringAsFixed(1),
-                  style: AppTypography.rating, // Figma: Semi-bold, 14px
-                ),
+              
                 const SizedBox(width: 4),
-                Icon(
-                  Icons.circle,
-                  size: 4,
-                  color: AppColors.textTertiary,
-                ),
+                Icon(Icons.circle, size: 4, color: AppColors.textTertiary),
                 const SizedBox(width: 4),
                 Text(
                   '$reviewCount Reviews',
@@ -143,7 +144,6 @@ class DoctorCardWidget extends StatelessWidget {
             ),
 
             const SizedBox(height: AppSpacing.md), // Figma: 12px gap
-
             // Availability and time slot badges
             Row(
               children: [
@@ -154,7 +154,6 @@ class DoctorCardWidget extends StatelessWidget {
                   color: AppColors.primaryBlue,
                 ),
                 const SizedBox(width: AppSpacing.sm), // Figma: 8px gap
-
                 // Time slot badge
                 _buildBadge(
                   svgPath: AppAssets.timeSvg,
@@ -165,7 +164,6 @@ class DoctorCardWidget extends StatelessWidget {
             ),
 
             const SizedBox(height: AppSpacing.md), // Figma: 12px gap
-
             // Location and distance
             Row(
               children: [
@@ -215,7 +213,7 @@ class DoctorCardWidget extends StatelessWidget {
         vertical: 6, // Figma: 6px vertical
       ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha:0.1), // Figma: Light blue background
+        color: color.withValues(alpha: 0.1), // Figma: Light blue background
         borderRadius: BorderRadius.circular(6), // Figma: 6px radius
       ),
       child: Row(
@@ -225,10 +223,7 @@ class DoctorCardWidget extends StatelessWidget {
             svgPath,
             width: 14,
             height: 14,
-            colorFilter: ColorFilter.mode(
-              color,
-              BlendMode.srcIn,
-            ),
+            colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
           ),
           const SizedBox(width: 4),
           Text(
