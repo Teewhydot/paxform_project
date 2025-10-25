@@ -49,6 +49,11 @@ class AppSpacing {
   /// Figma: 12px
   static const double radiusMedium = 12.0;
 
+  /// Medium border radius - 12px
+  /// Usage: Cards, containers, search bar
+  /// Figma: 12px
+  static const double radiusLargeSmall = 14.0;
+
   /// Large border radius - 16px
   /// Usage: Large cards, modal sheets
   /// Figma: 16px

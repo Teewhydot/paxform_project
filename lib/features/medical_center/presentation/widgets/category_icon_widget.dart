@@ -19,47 +19,33 @@ class CategoryIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(
-        AppSpacing.radiusMedium, // Figma: 12px radius for touch feedback
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.xs), // 4px padding
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Circular icon container
-            Container(
-              width: 56, // Figma: ~56px diameter
-              height: 56, // Figma: ~56px diameter
-              decoration: BoxDecoration(
-                color: AppColors.categoryColor, // Figma: Colored background
-                shape: BoxShape.circle,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(14.0), // Figma: Padding for image
-                child: Image.asset(
-                  imagePath,
-                  fit: BoxFit.contain,
+    return Padding(
+      padding: const EdgeInsets.all(AppSpacing.xs),
+      child: Container(
+        width: 72.5,
+        height: 75,
+        decoration: BoxDecoration(
+          color: AppColors.categoryColor,
+          borderRadius: BorderRadius.circular(AppSpacing.radiusLargeSmall),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Column(
+            children: [
+              Center(child: Image.asset(imagePath, width: 34, height: 34)),
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                label,
+                style: AppTypography.captionSmall.copyWith(
+                  color: AppColors.textPrimary,
+                  fontSize: 13,
                 ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
-            ),
-
-            const SizedBox(height: AppSpacing.sm), // Figma: 8px gap
-
-            // Label
-            Text(
-              label,
-              style: AppTypography.captionSmall.copyWith(
-                color: AppColors.textPrimary,
-                fontSize: 13, // Figma: 13px
-              ),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

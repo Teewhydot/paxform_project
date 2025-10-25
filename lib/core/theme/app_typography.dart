@@ -23,10 +23,9 @@ class AppTypography {
   /// Figma: Bold, 18px
   static const TextStyle h2 = TextStyle(
     fontFamily: _fontFamily,
-    fontSize: 18,
-    fontWeight: FontWeight.w700, // Bold
-    height: 1.3,
-    letterSpacing: -0.2,
+    fontSize: 16,
+    fontWeight: FontWeight.w600, // Bold
+    letterSpacing: 0.5,
     color: AppColors.textPrimary,
   );
 
@@ -173,7 +172,7 @@ class AppTypography {
     fontSize: 14,
     fontWeight: FontWeight.w500, // Medium
     height: 1.4,
-    letterSpacing: 0,
+    letterSpacing: 0.5,
     color: AppColors.primaryBlue,
   );
 }
