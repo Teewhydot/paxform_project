@@ -102,4 +102,7 @@ class AppColors {
 
   ///Divider Color
   static const Color divider = Color(0xFFDEE2E6);
+
+  ///Privacy Banner Color
+  static const Color privacyBanner = Color(0xFF0C68C0);
 }
