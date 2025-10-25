@@ -26,21 +26,20 @@ class ActionButtonWidget extends StatelessWidget {
       borderRadius: BorderRadius.circular(
         AppSpacing.radiusMedium, // Figma: 12px radius
       ),
-      child: IntrinsicHeight(
-        child: Container(
-          width: 160,
-          height: 161,
-          padding: const EdgeInsets.all(AppSpacing.md), // Figma: 16px padding
-          decoration: BoxDecoration(
-            color: backgroundColor, // Figma: White background
-            borderRadius: BorderRadius.circular(
-              AppSpacing.radiusMedium, // Figma: 12px radius
-            ),
+      child: Container(
+        width: 160,
+        height: 161,
+        padding: const EdgeInsets.all(AppSpacing.md), // Figma: 16px padding
+        decoration: BoxDecoration(
+          color: backgroundColor, // Figma: White background
+          borderRadius: BorderRadius.circular(
+            AppSpacing.radiusMedium, // Figma: 12px radius
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
               // Icon container
               Container(
                 width: 42, // Figma: ~48px
@@ -83,7 +82,6 @@ class ActionButtonWidget extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
