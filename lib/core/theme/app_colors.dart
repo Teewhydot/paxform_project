@@ -22,6 +22,8 @@ class AppColors {
   /// Figma: #FFFFFF
   static const Color backgroundWhite = Color(0xFFFFFFFF);
 
+  static const Color black = Color(0xFF000000);
+
   /// Secondary background - slightly darker gray
   /// Figma: #E9ECEF
   static const Color backgroundGray = Color(0xFFE9ECEF);
@@ -94,4 +96,7 @@ class AppColors {
 
   ///Handle Color
   static const Color handleColor = Color(0xFF97A4BF);
+
+  ///Search Color
+  static const Color searchColor = Color(0xFFF6F7FB);
 }

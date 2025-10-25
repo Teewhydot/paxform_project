@@ -42,8 +42,9 @@ class MedicalCenterHomePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: AppSpacing.lg),
-
+                      const SizedBox(height: AppSpacing.md),
+                      const DragHandle(),
+                      const SizedBox(height: AppSpacing.md),
                       // Search bar
                       Padding(
                         padding: const EdgeInsets.symmetric(
@@ -62,7 +63,7 @@ class MedicalCenterHomePage extends StatelessWidget {
                         ),
                       ),
 
-                      const SizedBox(height: AppSpacing.xl),
+                      const SizedBox(height: AppSpacing.lg),
 
                       // Current appointment card
                       Padding(
@@ -326,8 +327,8 @@ class MedicalCenterHomePage extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.primaryBlue,
         borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(AppSpacing.radiusLarge),
-          bottomRight: Radius.circular(AppSpacing.radiusLarge),
+          bottomLeft: Radius.circular(AppSpacing.radiusXLarge),
+          bottomRight: Radius.circular(AppSpacing.radiusXLarge),
         ),
       ),
       child: Padding(
@@ -390,6 +391,24 @@ class MedicalCenterHomePage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ],
+      ),
+    );
+  }
+}
+
+class DragHandle extends StatelessWidget {
+  const DragHandle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        width: 60,
+        height: 3,
+        decoration: BoxDecoration(
+          color: AppColors.handleColor,
+          borderRadius: BorderRadius.circular(AppSpacing.radiusSmall),
+        ),
       ),
     );
   }

@@ -57,7 +57,7 @@ class AppSpacing {
   /// Extra large border radius - 20px
   /// Usage: Very rounded cards
   /// Figma: 20px
-  static const double radiusXLarge = 20.0;
+  static const double radiusXLarge = 26.0;
 
   /// Circular radius - 100px (for fully circular elements)
   /// Usage: Profile images, circular icon buttons

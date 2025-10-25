@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
-/// Typography styles matching Figma Medical Center design
-/// Uses system default fonts for cross-platform compatibility
 class AppTypography {
   AppTypography._(); // Private constructor to prevent instantiation
 
   // Base font family - using system default for cross-platform support
-  static const String _fontFamily = 'SF Pro Display'; // iOS default, falls back to Roboto on Android
+  static const String _fontFamily = 'Public Sans';
 
   // Header Styles
   /// Large header style for main titles
@@ -139,11 +137,11 @@ class AppTypography {
   /// Figma: Regular, 15px
   static const TextStyle searchHint = TextStyle(
     fontFamily: _fontFamily,
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: FontWeight.w400, // Regular
     height: 1.5,
-    letterSpacing: 0,
-    color: AppColors.textTertiary,
+    letterSpacing: 1.5,
+    color: AppColors.black,
   );
 
   /// Badge text for pills (Tomorrow, time, etc.)
