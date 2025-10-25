@@ -147,8 +147,8 @@ class AppTypography {
   /// Figma: Medium, 13px
   static const TextStyle badge = TextStyle(
     fontFamily: _fontFamily,
-    fontSize: 13,
-    fontWeight: FontWeight.w500, // Medium
+    fontSize: 14,
+    fontWeight: FontWeight.w400, // Medium
     height: 1.3,
     letterSpacing: 0,
     color: AppColors.primaryBlue,

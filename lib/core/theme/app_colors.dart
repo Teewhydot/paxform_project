@@ -99,4 +99,7 @@ class AppColors {
 
   ///Search Color
   static const Color searchColor = Color(0xFFF6F7FB);
+
+  ///Divider Color
+  static const Color divider = Color(0xFFDEE2E6);
 }

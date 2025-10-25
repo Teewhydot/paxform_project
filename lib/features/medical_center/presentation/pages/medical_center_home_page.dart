@@ -118,7 +118,7 @@ class MedicalCenterHomePage extends StatelessWidget {
                         ),
                       ),
 
-                      const SizedBox(height: AppSpacing.xxl),
+                      const SizedBox(height: AppSpacing.lg),
 
                       // Categories section
                       Padding(
