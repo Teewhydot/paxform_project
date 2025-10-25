@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_typography.dart';
 
@@ -29,15 +28,13 @@ class ActionButtonWidget extends StatelessWidget {
         AppSpacing.radiusMedium, // Figma: 12px radius
       ),
       child: Container(
-        padding: const EdgeInsets.all(AppSpacing.lg), // Figma: 16px padding
+        height: 161,
+        width: 160,
+        padding: const EdgeInsets.all(AppSpacing.md), // Figma: 16px padding
         decoration: BoxDecoration(
-          color: AppColors.backgroundWhite, // Figma: White background
+          color: backgroundColor, // Figma: White background
           borderRadius: BorderRadius.circular(
             AppSpacing.radiusMedium, // Figma: 12px radius
-          ),
-          border: Border.all(
-            color: AppColors.border, // Figma: Light gray border
-            width: 1,
           ),
         ),
         child: Column(
@@ -46,8 +43,8 @@ class ActionButtonWidget extends StatelessWidget {
           children: [
             // Icon container
             Container(
-              width: 48, // Figma: ~48px
-              height: 48, // Figma: ~48px
+              width: 42, // Figma: ~48px
+              height: 42, // Figma: ~48px
               decoration: BoxDecoration(
                 color: backgroundColor, // Figma: Colored background
                 borderRadius: BorderRadius.circular(
@@ -56,15 +53,11 @@ class ActionButtonWidget extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10.0), // Figma: Padding for image
-                child: Image.asset(
-                  imagePath,
-                  fit: BoxFit.contain,
-                ),
+                child: Image.asset(imagePath, fit: BoxFit.contain),
               ),
             ),
 
             const SizedBox(height: AppSpacing.md), // Figma: 12px gap
-
             // Title
             Text(
               title,
@@ -76,7 +69,6 @@ class ActionButtonWidget extends StatelessWidget {
             ),
 
             const SizedBox(height: AppSpacing.xs), // Figma: 4px gap
-
             // Subtitle
             Text(
               subtitle,

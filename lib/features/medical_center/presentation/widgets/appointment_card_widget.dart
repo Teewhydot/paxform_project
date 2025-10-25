@@ -31,176 +31,207 @@ class AppointmentCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(AppSpacing.lg), // Figma: 16px padding
-      decoration: BoxDecoration(
-        color: AppColors.primaryBlue, // Figma: Blue background
-        borderRadius: BorderRadius.circular(
-          AppSpacing.radiusLarge, // Figma: 16px radius
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.primaryBlue.withValues(alpha:0.3),
-            offset: const Offset(0, 4),
-            blurRadius: 12,
-            spreadRadius: 0,
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          // Doctor info section
-          Container(
-            padding: const EdgeInsets.all(AppSpacing.md), // Figma: 12px
-            decoration: BoxDecoration(
-              color: AppColors.backgroundWhite, // Figma: White background
-              borderRadius: BorderRadius.circular(
-                AppSpacing.radiusMedium, // Figma: 12px radius
-              ),
-            ),
-            child: Row(
-              children: [
-                // Profile image
-                CircleAvatar(
-                  radius: 20, // Figma: ~40px diameter
-                  backgroundColor: AppColors.backgroundGray,
-                  backgroundImage: profileImageUrl != null
-                      ? NetworkImage(profileImageUrl!)
-                      : AssetImage(AppAssets.person1Png) as ImageProvider,
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        /// Vector SVG
+        Column(
+          children: [
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(
+                AppSpacing.lg,
+              ), // Figma: 16px padding
+              decoration: BoxDecoration(
+                color: AppColors.cardBlue, // Figma: Blue background
+                borderRadius: BorderRadius.circular(
+                  AppSpacing.radiusLarge, // Figma: 16px radius
                 ),
-                const SizedBox(width: AppSpacing.md), // Figma: 12px gap
-
-                // Doctor name and details
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        doctorName,
-                        style: AppTypography.bodyLarge, // Figma: Semi-bold, 16px
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: AppColors.primaryBlue,
+                //     offset: const Offset(0, 4),
+                //     blurRadius: 12,
+                //     spreadRadius: 0,
+                //   ),
+                // ],
+              ),
+              child: Column(
+                children: [
+                  // Doctor info section
+                  Container(
+                    padding: const EdgeInsets.all(AppSpacing.md), // Figma: 12px
+                    decoration: BoxDecoration(
+                      color:
+                          AppColors.backgroundWhite, // Figma: White background
+                      borderRadius: BorderRadius.circular(
+                        AppSpacing.radiusMedium, // Figma: 12px radius
                       ),
-                      const SizedBox(height: 2),
-                      Text(
-                        '$specialty • $location',
-                        style: AppTypography.caption.copyWith(
-                          color: AppColors.textSecondary,
-                        ), // Figma: Regular, 13px, gray
+                    ),
+                    child: Row(
+                      children: [
+                        // Profile image
+                        CircleAvatar(
+                          radius: 20, // Figma: ~40px diameter
+                          backgroundColor: AppColors.backgroundGray,
+                          backgroundImage: profileImageUrl != null
+                              ? NetworkImage(profileImageUrl!)
+                              : AssetImage(AppAssets.person1Png)
+                                    as ImageProvider,
+                        ),
+                        const SizedBox(width: AppSpacing.md), // Figma: 12px gap
+                        // Doctor name and details
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                doctorName,
+                                style: AppTypography
+                                    .bodyLarge, // Figma: Semi-bold, 16px
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                '$specialty • $location',
+                                style: AppTypography.caption.copyWith(
+                                  color: AppColors.textSecondary,
+                                ), // Figma: Regular, 13px, gray
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: AppSpacing.md), // Figma: 12px gap
+                  // Date and time section
+                  Row(
+                    children: [
+                      // Date
+                      Expanded(
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              AppAssets.calendarSvg,
+                              width: 18,
+                              height: 18,
+                              colorFilter: ColorFilter.mode(
+                                AppColors.textWhite.withValues(alpha: 0.9),
+                                BlendMode.srcIn,
+                              ),
+                            ),
+                            const SizedBox(width: AppSpacing.sm), // 8px gap
+                            Text(
+                              date,
+                              style: AppTypography.bodySmall.copyWith(
+                                color: AppColors.textWhite,
+                                fontWeight: FontWeight.w600,
+                              ), // Figma: Regular, 14px, white
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Navigation button
+                      InkWell(
+                        onTap: onNavigateTap,
+                        borderRadius: BorderRadius.circular(
+                          AppSpacing.radiusCircular,
+                        ),
+                        child: Container(
+                          width: 36, // Figma: ~36px
+                          height: 36, // Figma: ~36px
+                          decoration: BoxDecoration(
+                            color: AppColors
+                                .backgroundWhite, // Figma: White background
+                            shape: BoxShape.circle,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SvgPicture.asset(
+                              AppAssets.sendSvg,
+                              width: 18,
+                              height: 18,
+                              colorFilter: const ColorFilter.mode(
+                                AppColors.primaryBlue,
+                                BlendMode.srcIn,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
-                ),
+
+                  const SizedBox(height: AppSpacing.sm), // Figma: 8px gap
+                  // Time
+                  Row(
+                    children: [
+                      SvgPicture.asset(
+                        AppAssets.timeSvg,
+                        width: 18,
+                        height: 18,
+                        colorFilter: ColorFilter.mode(
+                          AppColors.textWhite.withValues(alpha: 0.9),
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                      const SizedBox(width: AppSpacing.sm), // 8px gap
+                      Text(
+                        time,
+                        style: AppTypography.bodySmall.copyWith(
+                          color: AppColors.textWhite,
+                          fontWeight: FontWeight.w600,
+                        ), // Figma: Regular, 14px, white
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: AppSpacing.md), // Figma: 12px gap
+                  // Pagination dots
+                ],
+              ),
+            ),
+            const SizedBox(height: AppSpacing.md), // Figma: 12px gap
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildDot(isActive: true),
+                const SizedBox(width: 6),
+                _buildDot(isActive: false),
+                const SizedBox(width: 6),
+                _buildDot(isActive: false),
               ],
             ),
+          ],
+        ),
+        Positioned(
+          bottom: -50,
+          left: -40,
+          right: 0,
+          child: SvgPicture.asset(
+            AppAssets.vectorSvg,
+            width: double.infinity,
+            height: 143,
+            fit: BoxFit.cover,
           ),
-
-          const SizedBox(height: AppSpacing.md), // Figma: 12px gap
-
-          // Date and time section
-          Row(
-            children: [
-              // Date
-              Expanded(
-                child: Row(
-                  children: [
-                    SvgPicture.asset(
-                      AppAssets.calendarSvg,
-                      width: 18,
-                      height: 18,
-                      colorFilter: ColorFilter.mode(
-                        AppColors.textWhite.withValues(alpha: 0.9),
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                    const SizedBox(width: AppSpacing.sm), // 8px gap
-                    Text(
-                      date,
-                      style: AppTypography.bodySmall.copyWith(
-                        color: AppColors.textWhite,
-                      ), // Figma: Regular, 14px, white
-                    ),
-                  ],
-                ),
-              ),
-
-              // Navigation button
-              InkWell(
-                onTap: onNavigateTap,
-                borderRadius: BorderRadius.circular(AppSpacing.radiusCircular),
-                child: Container(
-                  width: 36, // Figma: ~36px
-                  height: 36, // Figma: ~36px
-                  decoration: BoxDecoration(
-                    color: AppColors.backgroundWhite, // Figma: White background
-                    shape: BoxShape.circle,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset(
-                      AppAssets.sendSvg,
-                      width: 18,
-                      height: 18,
-                      colorFilter: const ColorFilter.mode(
-                        AppColors.primaryBlue,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-
-          const SizedBox(height: AppSpacing.sm), // Figma: 8px gap
-
-          // Time
-          Row(
-            children: [
-              SvgPicture.asset(
-                AppAssets.timeSvg,
-                width: 18,
-                height: 18,
-                colorFilter: ColorFilter.mode(
-                  AppColors.textWhite.withValues(alpha: 0.9),
-                  BlendMode.srcIn,
-                ),
-              ),
-              const SizedBox(width: AppSpacing.sm), // 8px gap
-              Text(
-                time,
-                style: AppTypography.bodySmall.copyWith(
-                  color: AppColors.textWhite,
-                ), // Figma: Regular, 14px, white
-              ),
-            ],
-          ),
-
-          const SizedBox(height: AppSpacing.md), // Figma: 12px gap
-
-          // Pagination dots
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _buildDot(isActive: true),
-              const SizedBox(width: 6),
-              _buildDot(isActive: false),
-              const SizedBox(width: 6),
-              _buildDot(isActive: false),
-            ],
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
   Widget _buildDot({required bool isActive}) {
     return Container(
-      width: isActive ? 24 : 6, // Figma: Active dot is wider
-      height: 6,
+      width: isActive ? 15 : 15, // Figma: Active dot is wider
+      height: 2,
       decoration: BoxDecoration(
         color: isActive
-            ? AppColors.textWhite // Figma: White for active
-            : AppColors.textWhite.withValues(alpha:0.4), // Figma: Transparent for inactive
+            ? AppColors
+                  .primaryBlue // Figma: White for active
+            : AppColors.primaryBlue.withValues(
+                alpha: 0.2,
+              ), // Figma: Transparent for inactive
         borderRadius: BorderRadius.circular(3),
       ),
     );

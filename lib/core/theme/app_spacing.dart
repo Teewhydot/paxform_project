@@ -21,7 +21,7 @@ class AppSpacing {
   /// Large spacing - 16px
   /// Usage: Standard padding, card padding, element gaps
   /// Figma: 16px
-  static const double lg = 16.0;
+  static const double lg = 15.0;
 
   /// Extra large spacing - 20px
   /// Usage: Section gaps, large padding
@@ -31,7 +31,7 @@ class AppSpacing {
   /// 2X large spacing - 24px
   /// Usage: Major section gaps, screen padding
   /// Figma: 24px
-  static const double xxl = 24.0;
+  static const double xxl = 25.0;
 
   /// 3X large spacing - 32px
   /// Usage: Large section breaks

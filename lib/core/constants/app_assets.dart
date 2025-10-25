@@ -23,6 +23,9 @@ class AppAssets {
   /// Time/clock icon
   static const String timeSvg = '$_svgsPath/time.svg';
 
+  /// Vector SVG
+  static const String vectorSvg = '$_svgsPath/vector.svg';
+
   // Category Icons (PNG)
   /// Bone category icon
   static const String bonePng = '$_pngsPath/bone.png';
@@ -50,10 +53,12 @@ class AppAssets {
 
   // Action/Feature Icons (PNG)
   /// Doctor appointment booking icon
-  static const String doctorAppointmentPng = '$_pngsPath/doctor_appointment.png';
+  static const String doctorAppointmentPng =
+      '$_pngsPath/doctor_appointment.png';
 
   /// Hospital appointment booking icon
-  static const String hospitalAppointmentPng = '$_pngsPath/hospital_appointment.png';
+  static const String hospitalAppointmentPng =
+      '$_pngsPath/hospital_appointment.png';
 
   /// Filter icon for search
   static const String filterPng = '$_pngsPath/filter.png';
@@ -70,7 +75,8 @@ class AppAssets {
 
   // Location/Building Images (PNG)
   /// Medical center building image
-  static const String nearestMedicalCenterPng = '$_pngsPath/nearest_medical_center.png';
+  static const String nearestMedicalCenterPng =
+      '$_pngsPath/nearest_medical_center.png';
 
   // UI Icons (PNG)
   /// Date icon

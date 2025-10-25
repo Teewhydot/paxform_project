@@ -63,7 +63,7 @@ class MedicalCenterHomePage extends StatelessWidget {
                         ),
                       ),
 
-                      const SizedBox(height: AppSpacing.lg),
+                      const SizedBox(height: AppSpacing.xxl),
 
                       // Current appointment card
                       Padding(

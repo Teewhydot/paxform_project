@@ -101,7 +101,7 @@ class SearchBarWidget extends StatelessWidget {
         InkWell(
           onTap: onScanTapped,
           borderRadius: BorderRadius.circular(
-            AppSpacing.radiusSmall, // Figma: 8px radius
+            AppSpacing.radiusSmall,
           ),
           child: Container(
             width: 60,
