@@ -30,7 +30,6 @@ class MedicalCenterCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 180,
-      height: 250,
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: AppColors.backgroundWhite,
@@ -47,6 +46,7 @@ class MedicalCenterCardWidget extends StatelessWidget {
         ],
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min, // Sizes to children's intrinsic height
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Image section with favorite button

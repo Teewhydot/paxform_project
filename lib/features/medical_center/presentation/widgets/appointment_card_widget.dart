@@ -94,7 +94,7 @@ class AppointmentCardWidget extends StatelessWidget {
                               Text(
                                 '$specialty • $location',
                                 style: AppTypography.caption.copyWith(
-                                  color: AppColors.textSecondary,
+                                  color: AppColors.black,
                                 ), // Figma: Regular, 13px, gray
                               ),
                             ],
@@ -104,35 +104,74 @@ class AppointmentCardWidget extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: AppSpacing.md), // Figma: 12px gap
+                  const SizedBox(height: AppSpacing.xl),
                   // Date and time section
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // Date
                       Expanded(
-                        child: Row(
+                        child: Column(
+                          spacing: AppSpacing.md,
                           children: [
-                            SvgPicture.asset(
-                              AppAssets.calendarSvg,
-                              width: 18,
-                              height: 18,
-                              colorFilter: ColorFilter.mode(
-                                AppColors.textWhite.withValues(alpha: 0.9),
-                                BlendMode.srcIn,
-                              ),
+                            Row(
+                              children: [
+                                // Date
+                                Expanded(
+                                  child: Row(
+                                    children: [
+                                      SvgPicture.asset(
+                                        AppAssets.calendarSvg,
+                                        width: 18,
+                                        height: 18,
+                                        colorFilter: ColorFilter.mode(
+                                          AppColors.textWhite.withValues(
+                                            alpha: 0.9,
+                                          ),
+                                          BlendMode.srcIn,
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: AppSpacing.sm,
+                                      ), // 8px gap
+                                      Text(
+                                        date,
+                                        style: AppTypography.bodySmall.copyWith(
+                                          color: AppColors.textWhite,
+                                          fontWeight: FontWeight.w600,
+                                        ), // Figma: Regular, 14px, white
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                            const SizedBox(width: AppSpacing.sm), // 8px gap
-                            Text(
-                              date,
-                              style: AppTypography.bodySmall.copyWith(
-                                color: AppColors.textWhite,
-                                fontWeight: FontWeight.w600,
-                              ), // Figma: Regular, 14px, white
+
+                            // Time
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  AppAssets.timeSvg,
+                                  width: 18,
+                                  height: 18,
+                                  colorFilter: ColorFilter.mode(
+                                    AppColors.textWhite.withValues(alpha: 0.9),
+                                    BlendMode.srcIn,
+                                  ),
+                                ),
+                                const SizedBox(width: AppSpacing.sm), // 8px gap
+                                Text(
+                                  time,
+                                  style: AppTypography.bodySmall.copyWith(
+                                    color: AppColors.textWhite,
+                                    fontWeight: FontWeight.w600,
+                                  ), // Figma: Regular, 14px, white
+                                ),
+                              ],
                             ),
                           ],
                         ),
                       ),
-
                       // Navigation button
                       InkWell(
                         onTap: onNavigateTap,
@@ -140,50 +179,24 @@ class AppointmentCardWidget extends StatelessWidget {
                           AppSpacing.radiusCircular,
                         ),
                         child: Container(
-                          width: 36, // Figma: ~36px
-                          height: 36, // Figma: ~36px
+                          width: 50, // Figma: ~36px
+                          height: 50, // Figma: ~36px
                           decoration: BoxDecoration(
                             color: AppColors
                                 .backgroundWhite, // Figma: White background
                             shape: BoxShape.circle,
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SvgPicture.asset(
-                              AppAssets.sendSvg,
-                              width: 18,
-                              height: 18,
-                              colorFilter: const ColorFilter.mode(
-                                AppColors.primaryBlue,
-                                BlendMode.srcIn,
+                            padding: const EdgeInsets.all(12.0),
+                            child: Center(
+                              child: SvgPicture.asset(
+                                AppAssets.sendSvg,
+                                width: 24,
+                                height: 24,
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: AppSpacing.sm), // Figma: 8px gap
-                  // Time
-                  Row(
-                    children: [
-                      SvgPicture.asset(
-                        AppAssets.timeSvg,
-                        width: 18,
-                        height: 18,
-                        colorFilter: ColorFilter.mode(
-                          AppColors.textWhite.withValues(alpha: 0.9),
-                          BlendMode.srcIn,
-                        ),
-                      ),
-                      const SizedBox(width: AppSpacing.sm), // 8px gap
-                      Text(
-                        time,
-                        style: AppTypography.bodySmall.copyWith(
-                          color: AppColors.textWhite,
-                          fontWeight: FontWeight.w600,
-                        ), // Figma: Regular, 14px, white
                       ),
                     ],
                   ),

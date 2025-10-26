@@ -31,6 +31,7 @@ class CategoryIconWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(top: 10),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(child: Image.asset(imagePath, width: 34, height: 34)),
               const SizedBox(height: AppSpacing.sm),

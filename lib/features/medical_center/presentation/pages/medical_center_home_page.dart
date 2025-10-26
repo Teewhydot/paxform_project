@@ -258,13 +258,12 @@ class MedicalCenterHomePage extends StatelessWidget {
                     const SizedBox(height: AppSpacing.lg),
 
                     // Medical centers horizontal list
-                    SizedBox(
-                      height: 250, // Figma: Card height + padding
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.screenHorizontal,
-                        ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.screenHorizontal,
+                      ),
+                      child: Row(
                         children: [
                           MedicalCenterCardWidget(
                             name: 'Tyna Medical Center',
@@ -290,7 +289,7 @@ class MedicalCenterHomePage extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: AppSpacing.xxl),
+                    const SizedBox(height: 50),
 
                     // Privacy banner
                   ],

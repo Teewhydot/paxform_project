@@ -82,13 +82,15 @@ class SearchBarWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   child: Padding(
                     padding: const EdgeInsets.all(
-                      AppSpacing.sm,
+                      AppSpacing.xl,
                     ), // 8px padding for touch target
-                    child: Image.asset(
-                      AppAssets.filterPng,
-                      width: AppSpacing.iconMedium, // Figma: 24px icon
-                      height: AppSpacing.iconMedium,
-                      fit: BoxFit.contain,
+                    child: Center(
+                      child: Image.asset(
+                        AppAssets.filterPng,
+                        width: AppSpacing.iconMedium, // Figma: 24px icon
+                        height: AppSpacing.iconMedium,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),
@@ -100,9 +102,7 @@ class SearchBarWidget extends StatelessWidget {
         // Scan/Image icon (blue rounded button)
         InkWell(
           onTap: onScanTapped,
-          borderRadius: BorderRadius.circular(
-            AppSpacing.radiusSmall,
-          ),
+          borderRadius: BorderRadius.circular(AppSpacing.radiusSmall),
           child: Container(
             width: 60,
             height: 64,

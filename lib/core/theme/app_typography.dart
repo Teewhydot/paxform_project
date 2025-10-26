@@ -49,7 +49,7 @@ class AppTypography {
     fontWeight: FontWeight.w600, // Semi-bold
     height: 1.5,
     letterSpacing: 0,
-    color: AppColors.textPrimary,
+    color: AppColors.black,
   );
 
   /// Regular body text - for descriptions, details
@@ -60,7 +60,7 @@ class AppTypography {
     fontWeight: FontWeight.w400, // Regular
     height: 1.5,
     letterSpacing: 0,
-    color: AppColors.textPrimary,
+    color: AppColors.black,
   );
 
   /// Small body text - for secondary information
@@ -71,7 +71,7 @@ class AppTypography {
     fontWeight: FontWeight.w400, // Regular
     height: 1.5,
     letterSpacing: 0,
-    color: AppColors.textSecondary,
+    color: AppColors.black,
   );
 
   // Caption/Label Styles
@@ -83,7 +83,7 @@ class AppTypography {
     fontWeight: FontWeight.w400, // Regular
     height: 1.4,
     letterSpacing: 0,
-    color: AppColors.textSecondary,
+    color: AppColors.black,
   );
 
   /// Small caption for tiny labels
@@ -94,7 +94,7 @@ class AppTypography {
     fontWeight: FontWeight.w400, // Regular
     height: 1.4,
     letterSpacing: 0,
-    color: AppColors.textTertiary,
+    color: AppColors.black,
   );
 
   // Button Text Styles
@@ -106,7 +106,7 @@ class AppTypography {
     fontWeight: FontWeight.w500, // Medium
     height: 1.2,
     letterSpacing: 0.1,
-    color: AppColors.textWhite,
+    color: AppColors.black,
   );
 
   /// Medium button text
@@ -117,7 +117,7 @@ class AppTypography {
     fontWeight: FontWeight.w500, // Medium
     height: 1.2,
     letterSpacing: 0.1,
-    color: AppColors.textWhite,
+    color: AppColors.black,
   );
 
   /// Small button text
@@ -128,7 +128,7 @@ class AppTypography {
     fontWeight: FontWeight.w500, // Medium
     height: 1.2,
     letterSpacing: 0.1,
-    color: AppColors.textWhite,
+    color: AppColors.black,
   );
 
   // Specialized Styles
