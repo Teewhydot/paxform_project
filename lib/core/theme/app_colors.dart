@@ -16,6 +16,8 @@ class AppColors {
 
   static const Color cardBlue = Color(0xFF0099FF);
 
+  static const Color dotBlue = Color(0xFF1C85E8);
+
   // Background Colors
 
   /// Card and container backgrounds - white

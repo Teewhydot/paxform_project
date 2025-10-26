@@ -113,13 +113,8 @@ class DoctorCardWidget extends StatelessWidget {
                               fit: BoxFit.contain,
                             ),
 
-                            const SizedBox(width: 4),
-                            Icon(
-                              Icons.circle,
-                              size: 4,
-                              color: AppColors.textTertiary,
-                            ),
-                            const SizedBox(width: 4),
+                            const SizedBox(width: AppSpacing.sm),
+
                             Text(
                               '$reviewCount Reviews',
                               style: AppTypography.caption.copyWith(

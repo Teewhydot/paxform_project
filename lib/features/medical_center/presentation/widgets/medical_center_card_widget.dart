@@ -30,7 +30,9 @@ class MedicalCenterCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 180,
-      margin: const EdgeInsets.all(AppSpacing.xs), // Space around card for visibility
+      margin: const EdgeInsets.all(
+        AppSpacing.xs,
+      ), // Space around card for visibility
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: AppColors.backgroundWhite,
@@ -134,7 +136,7 @@ class MedicalCenterCardWidget extends StatelessWidget {
                     style: AppTypography.caption.copyWith(
                       fontSize: 12, // Figma: 12px
                       fontWeight: FontWeight.w400,
-                      color: AppColors.textSecondary,
+                      color: AppColors.black,
                     ),
                   ),
 

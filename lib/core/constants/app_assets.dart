@@ -14,6 +14,9 @@ class AppAssets {
   /// Location marker icon
   static const String locationSvg = '$_svgsPath/location.svg';
 
+  /// Search icon
+  static const String searchSvg = '$_svgsPath/search.svg';
+
   /// Send/navigation icon
   static const String sendSvg = '$_svgsPath/send.svg';
 

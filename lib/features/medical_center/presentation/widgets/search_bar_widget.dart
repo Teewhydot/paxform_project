@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
@@ -53,10 +54,11 @@ class SearchBarWidget extends StatelessWidget {
                     left: AppSpacing.lg, // Figma: 16px left padding
                     right: AppSpacing.md, // Figma: 12px right padding
                   ),
-                  child: Icon(
-                    Icons.search,
-                    size: AppSpacing.iconMedium, // Figma: 24px icon
-                    color: AppColors.black, // Figma: Gray icon
+                  child: SvgPicture.asset(
+                    AppAssets.searchSvg,
+                    width: 14, // Figma: 24px icon
+                    height: 14,
+                    fit: BoxFit.contain,
                   ),
                 ),
 

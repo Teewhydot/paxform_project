@@ -34,7 +34,6 @@ class AppointmentCardWidget extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        /// Vector SVG
         Column(
           children: [
             Container(
@@ -220,14 +219,14 @@ class AppointmentCardWidget extends StatelessWidget {
           ],
         ),
         Positioned(
-          bottom: -50,
-          left: -40,
+          bottom: -20,
+          left: -60,
           right: 0,
           child: SvgPicture.asset(
             AppAssets.vectorSvg,
-            width: double.infinity,
+            width: 409,
             height: 143,
-            fit: BoxFit.cover,
+            fit: BoxFit.contain,
           ),
         ),
       ],
@@ -237,15 +236,15 @@ class AppointmentCardWidget extends StatelessWidget {
   Widget _buildDot({required bool isActive}) {
     return Container(
       width: isActive ? 15 : 15, // Figma: Active dot is wider
-      height: 2,
+      height: 3,
       decoration: BoxDecoration(
         color: isActive
             ? AppColors
-                  .primaryBlue // Figma: White for active
+                  .dotBlue // Figma: White for active
             : AppColors.primaryBlue.withValues(
                 alpha: 0.2,
               ), // Figma: Transparent for inactive
-        borderRadius: BorderRadius.circular(3),
+        borderRadius: BorderRadius.circular(6),
       ),
     );
   }
