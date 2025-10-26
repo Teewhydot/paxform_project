@@ -76,7 +76,7 @@ class AppColors {
 
   /// Light purple/lavender background
   /// Figma: #E2D9F3
-  static const Color accentPurpleLight = Color(0xFFE2D9F3);
+  static const Color accentPurpleLight = Color(0xFFF9F5FF);
 
   // Semantic Colors
   /// Rating/Star color - yellow/gold

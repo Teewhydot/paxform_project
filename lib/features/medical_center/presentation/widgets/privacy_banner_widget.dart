@@ -20,8 +20,8 @@ class PrivacyBannerWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 48,
-            height: 48,
+            width: 52,
+            height: 52,
             decoration: const BoxDecoration(
               color: AppColors.privacyBanner,
               shape: BoxShape.circle,
@@ -30,12 +30,8 @@ class PrivacyBannerWidget extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: SvgPicture.asset(
                 AppAssets.shieldSvg,
-                width: 28,
-                height: 28,
-                colorFilter: const ColorFilter.mode(
-                  AppColors.textWhite,
-                  BlendMode.srcIn,
-                ),
+                width: 32,
+                height: 32,
               ),
             ),
           ),
@@ -44,7 +40,10 @@ class PrivacyBannerWidget extends StatelessWidget {
             'Information shared via forms is encrypted and can only be viewed by those you share it with.',
             style: AppTypography.bodySmall.copyWith(
               color: AppColors.textWhite,
-              fontSize: 13,
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              letterSpacing: 0.5,
+              height: 1.68,
             ),
             textAlign: TextAlign.center,
           ),
