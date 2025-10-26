@@ -30,6 +30,7 @@ class MedicalCenterCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 180,
+      margin: const EdgeInsets.all(AppSpacing.xs), // Space around card for visibility
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: AppColors.backgroundWhite,
