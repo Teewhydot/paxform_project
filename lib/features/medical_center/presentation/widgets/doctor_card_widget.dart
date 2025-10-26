@@ -123,7 +123,7 @@ class DoctorCardWidget extends StatelessWidget {
                             Text(
                               '$reviewCount Reviews',
                               style: AppTypography.caption.copyWith(
-                                color: AppColors.textSecondary,
+                                color: AppColors.black,
                               ), // Figma: Regular, 13px, gray
                             ),
                           ],

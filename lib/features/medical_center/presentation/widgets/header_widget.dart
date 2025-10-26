@@ -12,7 +12,7 @@ class HeaderWidget extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.screenHorizontal,
-        vertical: AppSpacing.xxxl + AppSpacing.lg,
+        vertical: AppSpacing.xxxl,
       ),
       decoration: const BoxDecoration(
         color: AppColors.primaryBlue,

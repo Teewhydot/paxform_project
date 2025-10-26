@@ -243,7 +243,7 @@ class MedicalCenterHomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(height: AppSpacing.xxxl),
+                    const SizedBox(height: 50),
                   ],
                 ),
               ),

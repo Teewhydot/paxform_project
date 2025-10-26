@@ -38,12 +38,11 @@ class CategoryIconWidget extends StatelessWidget {
               Text(
                 label,
                 style: AppTypography.captionSmall.copyWith(
-                  color: AppColors.textPrimary,
-                  fontSize: 13,
+                  color: AppColors.black,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.center,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),
