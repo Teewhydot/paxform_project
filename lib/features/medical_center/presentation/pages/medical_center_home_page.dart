@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
-import '../../../../core/theme/app_typography.dart';
 import '../widgets/action_button_widget.dart';
 import '../widgets/appointment_card_widget.dart';
 import '../widgets/category_icon_widget.dart';
 import '../widgets/doctor_card_widget.dart';
+import '../widgets/drag_handle_widget.dart';
+import '../widgets/header_widget.dart';
 import '../widgets/medical_center_card_widget.dart';
+import '../widgets/privacy_banner_widget.dart';
 import '../widgets/search_bar_widget.dart';
 import '../widgets/section_header_widget.dart';
 
-/// Medical Center home page - main screen of the app
-/// Displays appointments, categories, doctors, and medical centers
 class MedicalCenterHomePage extends StatelessWidget {
   const MedicalCenterHomePage({super.key});
 
@@ -25,8 +24,7 @@ class MedicalCenterHomePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              _buildHeader(),
-              // Scrollable content
+              const HeaderWidget(),
               Container(
                 decoration: BoxDecoration(
                   color: AppColors.backgroundWhite,
@@ -36,29 +34,19 @@ class MedicalCenterHomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: AppSpacing.md),
-                    const DragHandle(),
+                    const DragHandleWidget(),
                     const SizedBox(height: AppSpacing.md),
-                    // Search bar
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: AppSpacing.screenHorizontal,
                       ),
                       child: SearchBarWidget(
-                        onSearchTapped: () {
-                          // TODO: Navigate to search screen
-                        },
-                        onFilterTapped: () {
-                          // TODO: Show filter bottom sheet
-                        },
-                        onScanTapped: () {
-                          // TODO: Open camera/image scanner
-                        },
+                        onSearchTapped: () {},
+                        onFilterTapped: () {},
+                        onScanTapped: () {},
                       ),
                     ),
-
                     const SizedBox(height: AppSpacing.xxl),
-
-                    // Current appointment card
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: AppSpacing.screenHorizontal,
@@ -69,15 +57,10 @@ class MedicalCenterHomePage extends StatelessWidget {
                         location: 'ABC Medical Center',
                         date: '7 October 2021',
                         time: '08:00 AM -10:00 AM',
-                        onNavigateTap: () {
-                          // TODO: Open maps navigation
-                        },
+                        onNavigateTap: () {},
                       ),
                     ),
-
                     const SizedBox(height: AppSpacing.xxl),
-
-                    // Action buttons (Book Doctor/Hospital)
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: AppSpacing.screenHorizontal,
@@ -90,9 +73,7 @@ class MedicalCenterHomePage extends StatelessWidget {
                               backgroundColor: AppColors.accentPurpleLight,
                               title: 'Book Doctor Appointment',
                               subtitle: 'Find a Doctor or Specialist',
-                              onTap: () {
-                                // TODO: Navigate to doctor booking
-                              },
+                              onTap: () {},
                             ),
                           ),
                           const SizedBox(width: AppSpacing.lg),
@@ -102,33 +83,23 @@ class MedicalCenterHomePage extends StatelessWidget {
                               backgroundColor: AppColors.accentGreenLight,
                               title: 'Book Hospital Appointment',
                               subtitle: 'Locate nearby hospital to visit',
-                              onTap: () {
-                                // TODO: Navigate to hospital booking
-                              },
+                              onTap: () {},
                             ),
                           ),
                         ],
                       ),
                     ),
-
                     const SizedBox(height: AppSpacing.lg),
-
-                    // Categories section
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: AppSpacing.screenHorizontal,
                       ),
                       child: SectionHeaderWidget(
                         title: 'Categories',
-                        onSeeAllTapped: () {
-                          // TODO: Navigate to categories screen
-                        },
+                        onSeeAllTapped: () {},
                       ),
                     ),
-
                     const SizedBox(height: AppSpacing.lg),
-
-                    // Categories grid
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: AppSpacing.screenHorizontal,
@@ -175,25 +146,17 @@ class MedicalCenterHomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-
                     const SizedBox(height: AppSpacing.xxl),
-
-                    // Nearest Doctors section
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: AppSpacing.screenHorizontal,
                       ),
                       child: SectionHeaderWidget(
                         title: 'Nearest Doctors',
-                        onSeeAllTapped: () {
-                          // TODO: Navigate to doctors list
-                        },
+                        onSeeAllTapped: () {},
                       ),
                     ),
-
                     const SizedBox(height: AppSpacing.lg),
-
-                    // Doctors list
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: AppSpacing.screenHorizontal,
@@ -239,25 +202,17 @@ class MedicalCenterHomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-
                     const SizedBox(height: AppSpacing.xxl),
-
-                    // Nearest Medical Centers section
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: AppSpacing.screenHorizontal,
                       ),
                       child: SectionHeaderWidget(
                         title: 'Nearest Medical Center',
-                        onSeeAllTapped: () {
-                          // TODO: Navigate to medical centers list
-                        },
+                        onSeeAllTapped: () {},
                       ),
                     ),
-
                     const SizedBox(height: AppSpacing.lg),
-
-                    // Medical centers horizontal list
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       padding: const EdgeInsets.symmetric(
@@ -288,118 +243,16 @@ class MedicalCenterHomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-
-                    const SizedBox(height: 50),
-
-                    // Privacy banner
+                    const SizedBox(height: AppSpacing.xxxl),
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 30,
-                  vertical: 30,
-                ),
-                child: _buildPrivacyBanner(),
+              const Padding(
+                padding: EdgeInsets.all(AppSpacing.screenHorizontal),
+                child: PrivacyBannerWidget(),
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildHeader() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.screenHorizontal,
-        vertical: AppSpacing.lg,
-      ),
-      decoration: BoxDecoration(
-        color: AppColors.primaryBlue,
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(AppSpacing.radiusXLarge),
-          bottomRight: Radius.circular(AppSpacing.radiusXLarge),
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: AppSpacing.xxxl),
-        child: Column(
-          children: [
-            // Title
-            Text(
-              'Medical Center',
-              style: AppTypography.h1.copyWith(
-                color: AppColors.textWhite,
-                fontSize: 23,
-                fontWeight: FontWeight.w500,
-                letterSpacing: 0.5,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildPrivacyBanner() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(AppSpacing.xl),
-      decoration: BoxDecoration(
-        color: AppColors.primaryBlue,
-        borderRadius: BorderRadius.circular(AppSpacing.radiusMedium),
-      ),
-      child: Column(
-        children: [
-          Container(
-            width: 48,
-            height: 48,
-            decoration: BoxDecoration(
-              color: AppColors.privacyBanner,
-              shape: BoxShape.circle,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: SvgPicture.asset(
-                AppAssets.shieldSvg,
-                width: 28,
-                height: 28,
-                colorFilter: const ColorFilter.mode(
-                  AppColors.textWhite,
-                  BlendMode.srcIn,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: AppSpacing.md),
-          Text(
-            'Information shared via forms is encrypted and can only be viewed by those you share it with.',
-            style: AppTypography.bodySmall.copyWith(
-              color: AppColors.textWhite,
-              fontSize: 13,
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class DragHandle extends StatelessWidget {
-  const DragHandle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 60,
-        height: 3,
-        decoration: BoxDecoration(
-          color: AppColors.handleColor,
-          borderRadius: BorderRadius.circular(AppSpacing.radiusSmall),
         ),
       ),
     );
